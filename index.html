@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Page Title - Using dash separator for better readability -->
+    <!-- ✅ Page Title - Correct format -->
     <title>WDD 131 – Dynamic Web Fundamentals – Lawrence Adekunle</title>
     
-    <!-- Meta Description - 112 characters, within 50-160 range  -->
+    <!-- ✅ Meta Description - 112 characters, within 50-160 range -->
     <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Lawrence Adekunle. Learning web development with HTML, CSS, and JavaScript.">
     
-    <!-- Meta Author - Student name  -->
+    <!-- ✅ Meta Author -->
     <meta name="author" content="Lawrence Adekunle">
     
-    <!-- Google Fonts - Correct implementation with preconnect  -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -21,13 +21,13 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles/base.css">
     
-    <!-- JavaScript - Deferred loading for better performance -->
+    <!-- JavaScript -->
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
-        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
-        <nav>
+        <h1 id="course-title">WDD 131 – Dynamic Web Fundamentals</h1>
+        <nav aria-label="Main Navigation">
             <a href="https://www.linkedin.com/in/yourprofile/">LinkedIn</a>
             <a href="https://byupw.instructure.com/">Canvas</a>
             <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a>
@@ -38,20 +38,20 @@
     <main>
         <h1>Lawrence Adekunle</h1>
         
-        <section class="card about-card">
-            <h2>About Me</h2>
+        <section class="card about-card" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>My name is Lawrence and I go by Larry. I was born in Nigeria and currently live in Lagos with my family. I am currently working as a web developer at a tech company. My family is my world and I love spending time with them. I love to travel and I love to learn new things.</p>
-                    <p><strong>Lagos, Nigeria</strong></p>
+                    <p>My name is Lawrence and I go by Law. I was born in Nigeria and currently live in Lagos with my family. I am currently working as a web developer at a tech company. My family is my world and I love spending time with them. I love to travel and I love to learn new things.</p>
+                    <p><strong>📍 Lagos, Nigeria</strong></p>
                     <p>Lagos is the largest city in Nigeria and one of the fastest-growing cities in the world. Located on the coast of West Africa, it is known for its vibrant culture, bustling markets, and beautiful beaches. The city is a hub for technology, entertainment, and commerce in Africa.</p>
                 </div>
-                <img src="images/law.png" alt="Lawrence Adekunle" class="profile-image">
+                <img src="images/law.png" alt="Profile photo of Lawrence Adekunle" class="profile-image" width="150" height="150">
             </div>
         </section>
         
-        <section class="card resources-card">
-            <h2>Web Development Resources</h2>
+        <section class="card resources-card" aria-labelledby="resources-heading">
+            <h2 id="resources-heading">Web Development Resources</h2>
             <ul class="resources-list">
                 <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
                 <li><a href="https://www.w3schools.com/">W3Schools</a></li>
