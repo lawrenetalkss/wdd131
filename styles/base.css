@@ -1,5 +1,5 @@
 /* ========================================
-   CSS VARIABLES (COLOR STANDARDIZATION)
+   CSS VARIABLES (FULLY STANDARDIZED)
    ======================================== */
 :root {
     /* Primary Colors */
@@ -15,7 +15,7 @@
     --color-accent: #f39c12;
     --color-accent-light: #f0c060;
     
-    /* Neutral Colors */
+    /* Neutral Colors - All in hex */
     --color-white: #ffffff;
     --color-black: #1a1a1a;
     --color-gray-100: #f8f9fa;
@@ -33,22 +33,25 @@
     --color-border: #e0e0e0;
     --color-border-secondary: #1a5a8a;
     
-    /* Shadows */
+    /* Shadows - Using rgba is fine for transparency */
     --shadow-default: 0 2px 4px rgba(0, 0, 0, 0.1);
     
     /* Typography */
     --font-primary: 'Open Sans', sans-serif;
     --font-heading: 'Roboto', sans-serif;
     
-    /* Spacing */
+    /* Spacing - All in rem */
+    --spacing-xs: 0.25rem;
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
     --spacing-large: 1.5rem;
     --spacing-xl: 2rem;
+    --spacing-xxl: 2.5rem;
     
     /* Border Radius */
     --radius-small: 4px;
     --radius-medium: 8px;
+    --radius-large: 12px;
 }
 
 /* ========================================
@@ -80,7 +83,7 @@ header {
 #course-title {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: var(--spacing-xxl);
     font-weight: 700;
     margin-bottom: var(--spacing-medium);
 }
@@ -129,7 +132,7 @@ main {
     gap: var(--spacing-xl);
 }
 
-h1 {
+main h1 {
     grid-column: 1 / -1;
     text-align: center;
     font-family: var(--font-heading);
@@ -216,7 +219,7 @@ h1 {
     color: var(--color-secondary);
     text-decoration: none;
     display: block;
-    padding: 0.2rem 0;
+    padding: var(--spacing-xs) 0;
 }
 
 .resources-list li a:hover,
@@ -241,7 +244,7 @@ footer {
 }
 
 footer p {
-    margin: 0.25rem 0;
+    margin: var(--spacing-xs) 0;
 }
 
 #lastModified {
