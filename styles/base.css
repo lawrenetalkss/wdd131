@@ -188,13 +188,12 @@ main h1 {
 
 .profile-image {
     max-width: 100%;
-    height: auto;
+    height: auto; /* Remove the duplicate height: 150px; declaration */
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--color-border-secondary);
     flex-shrink: 0;
     width: 150px;
-    height: 150px;
 }
 
 /* ========================================
