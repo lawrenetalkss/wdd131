@@ -1,0 +1,50 @@
+/* Larger View Styles - min-width: 768px */
+@media only screen and (min-width: 768px) {
+    /* Hide hamburger button */
+    #hamburger {
+        display: none;
+    }
+    
+    /* Navigation - horizontal layout */
+    nav ul {
+        flex-direction: row;
+        max-height: none;
+        background: none;
+        gap: 0;
+        margin-top: 0;
+        padding: 0;
+    }
+    
+    nav ul li {
+        border-bottom: none;
+    }
+    
+    nav ul li a {
+        padding: 0.5rem 1.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgba(255,255,255,0.2);
+        transform: none;
+    }
+    
+    /* Gallery - CSS Grid (2+ columns) */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    main h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Extra Large Screens */
+@media only screen and (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
