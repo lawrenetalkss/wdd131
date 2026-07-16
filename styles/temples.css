@@ -173,3 +173,12 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Add this to style the site title in header */
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
