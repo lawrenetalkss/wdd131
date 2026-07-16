@@ -1,5 +1,5 @@
 // ==========================================
-// 1. HAMBURGER MENU TOGGLE
+// MBURGER MENU TOGGLE
 // ==========================================
 
 const hamburger = document.getElementById('hamburger');
@@ -100,4 +100,4 @@ galleryImages.forEach((img) => {
 
 console.log('%c🏛️ Temple Album - LDS Temples Photo Gallery', 'font-size: 18px; font-weight: bold; color: #4A6FA5;');
 console.log('%cBuilt by Lawrence Adekunle | WDD 131', 'font-size: 12px; color: #666;');
-console.log('%c✅ JavaScript loaded successfully!', 'font-size: 14px; color: green;');
+console.log('%c✅ JavaScript loaded successfully!', 'font-size: 14px; color: green;');1. HA
