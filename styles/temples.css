@@ -18,6 +18,8 @@ header {
     color: white;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
 }
 
 .header-content {
@@ -28,10 +30,13 @@ header {
     margin: 0 auto;
 }
 
-header h1 {
+header h1,
+.site-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
+    margin: 0;
+    color: white;
 }
 
 /* Hamburger Button */
@@ -41,12 +46,20 @@ header h1 {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     transition: transform 0.3s;
+    border-radius: 4px;
+    z-index: 1001;
 }
 
 #hamburger:hover {
     transform: scale(1.1);
+    background-color: rgba(255,255,255,0.1);
+}
+
+#hamburger:focus-visible {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
 }
 
 /* Navigation */
@@ -62,14 +75,18 @@ nav ul {
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease, margin 0.3s ease;
     background-color: #3d5f8a;
     border-radius: 8px;
     margin-top: 0.5rem;
+    opacity: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 nav ul.open {
-    max-height: 300px;
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 0.75rem;
 }
 
 nav ul li {
@@ -84,8 +101,9 @@ nav ul li a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-weight: 600;
+    font-size: 1.1rem;
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
@@ -93,6 +111,13 @@ nav ul li a:hover {
     background-color: rgba(255,255,255,0.15);
     color: #ffd700;
     transform: translateX(5px);
+}
+
+nav ul li a.active {
+    color: #ffd700;
+    font-weight: 700;
+    border-bottom: 2px solid #ffd700;
+    background-color: rgba(255,215,0,0.1);
 }
 
 /* Main */
@@ -125,6 +150,7 @@ figure {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
 figure:hover {
@@ -149,6 +175,31 @@ figcaption {
     text-align: center;
     color: #4A6FA5;
     background-color: #faf8f6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+figure:hover figcaption {
+    background-color: #4A6FA5;
+    color: white;
+}
+
+/* Image error handling */
+.image-error {
+    border: 2px dashed #ff6b6b;
+    padding: 10px;
+    background-color: #f8f9fa;
+    min-height: 150px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.image-error-text {
+    text-align: center;
+    padding: 10px;
+    color: #ff6b6b;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
 }
 
 /* Footer */
@@ -174,11 +225,66 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Add this to style the site title in header */
-.site-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    color: white;
+/* ==========================================
+   LARGER VIEW STYLES - min-width: 768px
+   ========================================== */
+@media only screen and (min-width: 768px) {
+    /* Hide hamburger button */
+    #hamburger {
+        display: none;
+    }
+    
+    /* Navigation - horizontal layout */
+    nav ul {
+        flex-direction: row;
+        max-height: none;
+        opacity: 1;
+        background: none;
+        gap: 0.25rem;
+        margin-top: 0.5rem;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    nav ul li {
+        border-bottom: none;
+    }
+    
+    nav ul li a {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgba(255,255,255,0.2);
+        transform: none;
+    }
+    
+    nav ul li a.active {
+        border-bottom: 2px solid #ffd700;
+        background-color: rgba(255,255,255,0.1);
+    }
+    
+    /* Gallery - CSS Grid (2+ columns) */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    main h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========================================
+   EXTRA LARGE SCREENS - min-width: 1024px
+   ========================================== */
+@media only screen and (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
 }
