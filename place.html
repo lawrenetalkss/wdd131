@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria - A Place to Visit</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/place.css">
+    
+    <!-- JavaScript -->
+    <script src="/scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
+    
+    <main>
+        <!-- Hero Section with srcset -->
+        <picture class="hero">
+            <source srcset="images/nigeria-hero-small.png" media="(max-width: 600px)">
+            <source srcset="images/nigeria-hero-medium.png" media="(max-width: 1024px)">
+            <img src="images/nigeria-hero-large.png" alt="Beautiful landscape of Nigeria" loading="lazy">
+            <img src= "images/weather-sunny.png" alt="Sunny weather icon" class="weather-icon" width="50" height="50">
+        </picture>
+        
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Data Section -->
+            <section class="data-card">
+                <h2>Data</h2>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="label">Capital:</span>
+                        <span class="value">Brasília</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Population:</span>
+                        <span class="value">216.4 million</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Language:</span>
+                        <span class="value">Portuguese</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Currency:</span>
+                        <span class="value">Brazilian Real (BRL)</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Area:</span>
+                        <span class="value">8.5 million km²</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Region:</span>
+                        <span class="value">South America</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Weather Section -->
+            <section class="weather-card">
+                <h2>Weather <span class="weather-icon-large">⛅</span></h2>
+                <div class="weather-content">
+                    <div class="weather-main">
+                        <img src="images/weather-sunny.svg" alt="Sunny weather icon" class="weather-icon-mobile" width="60" height="60">
+                        <div class="weather-temp">
+                            <span class="temperature">28</span>°C
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <p><strong>Condition:</strong> Partly Cloudy</p>
+                        <p><strong>Wind Speed:</strong> <span id="wind-speed">12</span> km/h</p>
+                        <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> | Lawrence Adekunle | Nigeria</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
