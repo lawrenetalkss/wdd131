@@ -57,7 +57,7 @@ header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: var(--spacing-md);
 }
 
@@ -108,7 +108,7 @@ main {
 
 /* Weather Icon (outside hero) */
 .weather-icon {
-    display: none; /* Hidden by default, shown in specific views if needed */
+    display: none;
 }
 
 /* Content Grid - Mobile (single column) */
@@ -126,6 +126,7 @@ main {
     padding: var(--spacing-lg);
     box-shadow: 0 2px 8px var(--shadow);
     border-top: 4px solid var(--primary-green);
+    position: relative;
 }
 
 /* Section Headings */
@@ -229,4 +230,185 @@ footer {
 footer p {
     margin: var(--spacing-sm) 0;
     font-size: 0.9rem;
+}
+
+/* ============================================
+   MEDIA QUERIES - Responsive Design
+   ============================================ */
+
+/* Tablet Layout - 601px to 1024px */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Show weather icon in heading */
+    .weather-icon-large {
+        display: inline;
+        font-size: 2rem;
+    }
+    
+    /* Two-column grid for tablet */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Adjust hero image */
+    .hero {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Larger spacing */
+    main {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Data items side by side */
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+    }
+    
+    .data-item {
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+/* Desktop Layout - 1025px and above */
+@media screen and (min-width: 1025px) {
+    /* Show weather icon in heading */
+    .weather-icon-large {
+        display: inline;
+        font-size: 2.5rem;
+    }
+    
+    /* Two-column grid for desktop */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+    }
+    
+    /* Larger hero */
+    .hero {
+        margin-bottom: var(--spacing-xl);
+        border-radius: var(--radius);
+    }
+    
+    /* Larger padding */
+    main {
+        padding: var(--spacing-xl);
+    }
+    
+    /* Better data grid */
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-xl);
+    }
+    
+    /* Weather section improvements */
+    .weather-main {
+        gap: var(--spacing-xl);
+    }
+    
+    .weather-temp {
+        font-size: 4rem;
+    }
+    
+    .weather-icon-mobile {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .weather-details {
+        max-width: 350px;
+    }
+}
+
+/* ============================================
+   PSEUDO-ELEMENTS - ::after for decoration
+   ============================================ */
+
+/* Decorative line after section headings */
+.data-card h2::after,
+.weather-card h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-green);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* Add a decorative element after each data item */
+.data-item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--primary-green), transparent);
+    margin-top: var(--spacing-sm);
+    opacity: 0.3;
+}
+
+.data-item:last-child::after {
+    display: none;
+}
+
+/* Add a small flag icon after the country name in footer */
+footer p:first-child::after {
+    content: " 🇳🇬";
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+/* Add decorative element after weather temperature */
+.weather-temp::after {
+    content: " ☀️";
+    font-size: 2rem;
+    margin-left: 5px;
+}
+
+/* Navigation items with decorative after */
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-white);
+    transition: width 0.3s ease;
+    margin: 4px auto 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hover effect for cards - FIXED: No nesting */
+.data-card:hover::after,
+.weather-card:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-green);
+    border-radius: var(--radius);
+    pointer-events: none;
+    animation: pulse-border 1.5s ease-in-out;
+}
+
+/* Keyframes Animation - FIXED: No CSS variables inside */
+@keyframes pulse-border {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.02);
+    }
 }
