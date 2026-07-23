@@ -1,0 +1,88 @@
+/* place-large.css */
+/* This file contains styles for larger screens (desktops and tablets) */
+
+/* Tablet Layout - 601px to 1024px */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Show weather icon in heading */
+    .weather-icon-large {
+        display: inline;
+        font-size: 2rem;
+    }
+    
+    /* Two-column grid for tablet */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Adjust hero image */
+    .hero {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Larger spacing */
+    main {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Data items side by side */
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+    }
+    
+    .data-item {
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+/* Desktop Layout - 1025px and above */
+@media screen and (min-width: 1025px) {
+    /* Show weather icon in heading */
+    .weather-icon-large {
+        display: inline;
+        font-size: 2.5rem;
+    }
+    
+    /* Two-column grid for desktop */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+    }
+    
+    /* Larger hero */
+    .hero {
+        margin-bottom: var(--spacing-xl);
+        border-radius: var(--radius);
+    }
+    
+    /* Larger padding */
+    main {
+        padding: var(--spacing-xl);
+    }
+    
+    /* Better data grid */
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-xl);
+    }
+    
+    /* Weather section improvements */
+    .weather-main {
+        gap: var(--spacing-xl);
+    }
+    
+    .weather-temp {
+        font-size: 4rem;
+    }
+    
+    .weather-icon-mobile {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .weather-details {
+        max-width: 350px;
+    }
+}
