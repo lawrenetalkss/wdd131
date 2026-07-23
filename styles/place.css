@@ -58,6 +58,30 @@ header h1 {
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Navigation - Flexbox */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-white);
+    color: var(--primary-green-dark);
+    transform: scale(1.05);
 }
 
 /* Main Container */
@@ -80,6 +104,11 @@ main {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Weather Icon (outside hero) */
+.weather-icon {
+    display: none; /* Hidden by default, shown in specific views if needed */
 }
 
 /* Content Grid - Mobile (single column) */
@@ -200,89 +229,4 @@ footer {
 footer p {
     margin: var(--spacing-sm) 0;
     font-size: 0.9rem;
-}
-
-/* ========== LARGER VIEW ========== */
-@media screen and (min-width: 768px) {
-    header h1 {
-        font-size: 3.5rem;
-    }
-    
-    /* Content Grid - 2 columns */
-    .content-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-xl);
-    }
-    
-    .data-card {
-        grid-column: 1 / 2;
-    }
-    
-    .weather-card {
-        grid-column: 2 / 3;
-    }
-    
-    /* Weather Icon - Show large, hide mobile */
-    .weather-icon-large {
-        display: inline;
-    }
-    
-    .weather-icon-mobile {
-        display: none;
-    }
-    
-    /* Position weather icon after heading */
-    .weather-card h2 {
-        justify-content: flex-start;
-        gap: var(--spacing-sm);
-    }
-    
-    .weather-content {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .weather-details {
-        text-align: left;
-    }
-    
-    /* Data Grid - 2 columns for larger view */
-    .data-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-sm) var(--spacing-lg);
-    }
-    
-    .data-item {
-        border-bottom: none;
-        padding: var(--spacing-sm) 0;
-    }
-    
-    .data-item:nth-child(odd) {
-        border-bottom: 1px solid #e0e0e0;
-    }
-    
-    .data-item:nth-child(even) {
-        border-bottom: 1px solid #e0e0e0;
-    }
-    
-    .data-item:last-child,
-    .data-item:nth-last-child(2) {
-        border-bottom: none;
-    }
-}
-
-/* ========== EXTRA LARGE ========== */
-@media screen and (min-width: 1200px) {
-    main {
-        padding: var(--spacing-xl);
-    }
-    
-    .content-grid {
-        gap: var(--spacing-xl);
-    }
-    
-    header h1 {
-        font-size: 4rem;
-    }
 }
