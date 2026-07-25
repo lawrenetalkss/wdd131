@@ -1,12 +1,15 @@
-/* place-large.css */
-/* This file contains styles for larger screens (desktops and tablets) */
-
-/* Tablet Layout - 601px to 1024px */
+/* ============================================
+   TABLET LAYOUT - 601px to 1024px
+   ============================================ */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-    /* Show weather icon in heading */
+    /* Show emoticon, hide SVG */
     .weather-icon-large {
-        display: inline;
+        display: inline; /* Emoticon shows on tablet */
         font-size: 2rem;
+    }
+    
+    .weather-icon-mobile {
+        display: none; /* SVG hidden on tablet */
     }
     
     /* Two-column grid for tablet */
@@ -36,12 +39,18 @@
     }
 }
 
-/* Desktop Layout - 1025px and above */
+/* ============================================
+   DESKTOP LAYOUT - 1025px and above
+   ============================================ */
 @media screen and (min-width: 1025px) {
-    /* Show weather icon in heading */
+    /* Show emoticon, hide SVG */
     .weather-icon-large {
-        display: inline;
+        display: inline; /* Emoticon shows on desktop */
         font-size: 2.5rem;
+    }
+    
+    .weather-icon-mobile {
+        display: none; /* SVG hidden on desktop */
     }
     
     /* Two-column grid for desktop */
@@ -75,11 +84,6 @@
     
     .weather-temp {
         font-size: 4rem;
-    }
-    
-    .weather-icon-mobile {
-        width: 80px;
-        height: 80px;
     }
     
     .weather-details {

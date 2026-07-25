@@ -13,26 +13,30 @@ lastModifiedElement.textContent = `Last Modified: ${lastModified}`;
  * Calculates wind chill factor in Celsius
  * Formula: 13.12 + 0.6215*T - 11.37*(V^0.16) + 0.3965*T*(V^0.16)
  * Where T = temperature in °C, V = wind speed in km/h
+ * 
+ * CONDITIONS for valid wind chill (Metric):
+ * - Temperature MUST be <= 10°C
+ * - Wind speed MUST be > 4.8 km/h
  */
 function calculateWindChill(temperature, windSpeed) {
-    // Check conditions for valid wind chill calculation (Metric units)
-    // Conditions: Temperature <= 10°C AND Wind speed > 4.8 km/h
-    if (temperature > 10 || windSpeed <= 4.8) {
+    // Check conditions for valid wind chill calculation
+    // According to instructions: Temperature <= 10°C AND Wind speed > 4.8 km/h
+    if (temperature <= 10 && windSpeed > 4.8) {
+        // Calculate wind chill using the formula
+        const windChill = 13.12 + (0.6215 * temperature) - 
+                          (11.37 * Math.pow(windSpeed, 0.16)) + 
+                          (0.3965 * temperature * Math.pow(windSpeed, 0.16));
+        return Math.round(windChill); // Round to nearest integer
+    } else {
         return null; // Conditions not met - return null for "N/A"
     }
-    
-    // Calculate wind chill using the formula
-    const windChill = 13.12 + (0.6215 * temperature) - 
-                      (11.37 * Math.pow(windSpeed, 0.16)) + 
-                      (0.3965 * temperature * Math.pow(windSpeed, 0.16));
-    
-    return Math.round(windChill); // Round to nearest integer
 }
 
 // ========== DISPLAY WIND CHILL ==========
-// Nigeria weather - Static values matching the weather section
-const temperature = 32; // °C
-const windSpeed = 8; // km/h
+// Nigeria weather - Static values
+// Using temperature that meets wind chill conditions (<= 10°C)
+const temperature = 8; // °C (changed from 32 to meet conditions)
+const windSpeed = 12; // km/h
 
 // Get the wind chill element
 const windChillElement = document.getElementById('wind-chill');
@@ -47,11 +51,8 @@ if (windChill !== null) {
     windChillElement.textContent = 'N/A';
 }
 
-// ========== (Optional) Log for debugging ==========
+// ========== Log for debugging ==========
 console.log(`Temperature: ${temperature}°C`);
 console.log(`Wind Speed: ${windSpeed} km/h`);
 console.log(`Wind Chill: ${windChillElement.textContent}`);
-
-// ========== (Optional) Future API Preparation ==========
-// This code structure prepares for future real-time weather data
-// The calculateWindChill function can be reused with dynamic data
+console.log(`Conditions met: ${temperature <= 10 && windSpeed > 4.8}`);
