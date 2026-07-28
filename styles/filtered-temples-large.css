@@ -1,0 +1,54 @@
+/* ============================================
+   TABLET LAYOUT - 601px to 1024px
+   ============================================ */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .temple-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    main {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ============================================
+   DESKTOP LAYOUT - 1025px and above
+   ============================================ */
+@media screen and (min-width: 1025px) {
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    header h1 {
+        font-size: 3.5rem;
+    }
+    
+    main {
+        padding: var(--spacing-xl);
+    }
+    
+    .temple-grid figure {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .temple-grid figure:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP - 1400px and above
+   ============================================ */
+@media screen and (min-width: 1400px) {
+    .temple-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+}
