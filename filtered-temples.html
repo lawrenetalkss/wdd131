@@ -23,7 +23,8 @@
     <header>
         <h1>Temple Album</h1>
         <nav>
-            <a href="#" id="home">Home</a>
+            <a href="index.html" id="home-page"> Home</a>
+            <a href="#" id="home" class="active">All Temples</a>
             <a href="#" id="old">Old</a>
             <a href="#" id="new">New</a>
             <a href="#" id="large">Large</a>
@@ -32,6 +33,12 @@
     </header>
     
     <main>
+        <!-- Filter Status Bar -->
+        <div id="filter-status" class="filter-status">
+            Showing: <span id="current-filter">All Temples</span>
+            <span id="temple-count">(0 temples)</span>
+        </div>
+        
         <div id="temple-grid" class="temple-grid">
             <!-- Temples will be dynamically inserted here -->
         </div>
