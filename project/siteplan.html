@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website planning document for the Lagos Island Heritage project - WDD 131">
+    <meta name="author" content="Lawrence Adekunle">
+    <title>Lagos Island Heritage - Website Plan</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <link rel="stylesheet" href="styles/siteplan-large.css">
+    
+    <!-- JavaScript -->
+    <script src="scripts/siteplan.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <span class="logo">🏛️</span>
+            <h1>Lagos Island Heritage</h1>
+        </div>
+        <p class="tagline">Preserving the Architectural History of Lagos</p>
+        <nav>
+            <a href="#site-name">Site Name</a>
+            <a href="#purpose">Purpose</a>
+            <a href="#scenarios">Scenarios</a>
+            <a href="#colors">Colors</a>
+            <a href="#typography">Typography</a>
+            <a href="#wireframes">Wireframes</a>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- ==================== SITE NAME ==================== -->
+        <section id="site-name" class="plan-section">
+            <h2>Site Name</h2>
+            <div class="content-block">
+                <div class="name-display">
+                    <span class="site-name-large">Lagos Island Heritage</span>
+                    <p class="domain">🌐 Domain: lagosislandheritage.com</p>
+                    <p class="domain-status">✅ Available for purchase</p>
+                </div>
+                <div class="description">
+                    <h3>Why This Name?</h3>
+                    <p>The name <strong>"Lagos Island Heritage"</strong> was chosen because it clearly communicates the site's purpose: showcasing the historical architecture and cultural heritage of Lagos Island, Nigeria. This name is:</p>
+                    <ul>
+                        <li><strong>Descriptive:</strong> Immediately tells visitors the site focuses on Lagos Island's historical and architectural heritage.</li>
+                        <li><strong>Memorable:</strong> Easy to remember and share with others interested in Nigerian history.</li>
+                        <li><strong>SEO-Friendly:</strong> Contains keywords that history enthusiasts and tourists would search for.</li>
+                        <li><strong>Professional:</strong> Conveys authority and credibility as a historical resource.</li>
+                        <li><strong>Cultural Significance:</strong> Reflects the importance of preserving Lagos's rich architectural history.</li>
+                    </ul>
+                    <div class="note">
+                        <strong>Logo Concept:</strong> A stylized representation of a colonial-era building with the silhouette of Lagos Island, using the Nigerian flag colors (green and white) with gold accents.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== SITE PURPOSE ==================== -->
+        <section id="purpose" class="plan-section">
+            <h2>Site Purpose</h2>
+            <div class="content-block">
+                <p>The <strong>Lagos Island Heritage</strong> website serves as a comprehensive digital guide to the significant historical buildings and landmarks on Lagos Island. The site aims to:</p>
+                <ul class="purpose-list">
+                    <li>
+                        <strong>🏛️ Showcase Architectural Heritage:</strong>
+                        Highlight the colonial, Afro-Brazilian, and post-independence architectural treasures that tell the story of Lagos's development from a small fishing village to Nigeria's former capital.
+                    </li>
+                    <li>
+                        <strong>📚 Educate Visitors:</strong>
+                        Provide detailed historical information about each landmark, including construction dates, architectural styles, original purposes, and current uses.
+                    </li>
+                    <li>
+                        <strong>🗺️ Guide Exploration:</strong>
+                        Help tourists, students, and history enthusiasts discover and explore the historical sites of Lagos Island through interactive features.
+                    </li>
+                    <li>
+                        <strong>📱 Provide Interactive Experience:</strong>
+                        Offer dynamic filtering, search functionality, and "Show More" features that allow users to explore content in depth.
+                    </li>
+                    <li>
+                        <strong>📖 Preserve History:</strong>
+                        Contribute to the digital preservation of Lagos's historical identity for future generations.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- ==================== SCENARIOS ==================== -->
+        <section id="scenarios" class="plan-section">
+            <h2>Scenarios</h2>
+            <div class="content-block">
+                <div class="scenario-card">
+                    <h3>Scenario 1: Tourist Exploring Lagos</h3>
+                    <div class="question">
+                        <span class="icon">🧳</span>
+                        <p>"I'm visiting Lagos for the first time and want to explore the historical buildings on Lagos Island. What should I see and what's the history behind these landmarks?"</p>
+                    </div>
+                    <div class="answer">
+                        <h4>Site Will Answer:</h4>
+                        <ul>
+                            <li>Overview of the 6 major historical landmarks on Lagos Island</li>
+                            <li>Each landmark's location, construction date, and architectural style</li>
+                            <li>Historical significance and interesting facts about each building</li>
+                            <li>Current uses and visitor information for each site</li>
+                            <li>Interactive map showing the location of each landmark</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <h3>Scenario 2: Architecture Student Researching</h3>
+                    <div class="question">
+                        <span class="icon">📐</span>
+                        <p>"I'm a student researching colonial and Afro-Brazilian architecture in West Africa. What architectural styles are represented on Lagos Island and where can I find examples?"</p>
+                    </div>
+                    <div class="answer">
+                        <h4>Site Will Answer:</h4>
+                        <ul>
+                            <li>Filtering system to view landmarks by architectural style (Colonial, Afro-Brazilian, Modernist)</li>
+                            <li>Detailed architectural descriptions for each landmark</li>
+                            <li>Information about architects and construction periods</li>
+                            <li>Historical context explaining the influence of different architectural styles</li>
+                            <li>Comparison of architectural elements between different buildings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <h3>Scenario 3: History Enthusiast Learning</h3>
+                    <div class="question">
+                        <span class="icon">📖</span>
+                        <p>"I want to learn about Nigeria's history through its architecture. Can I find detailed historical information about buildings like the Cathedral Church of Christ and Freedom Park?"</p>
+                    </div>
+                    <div class="answer">
+                        <h4>Site Will Answer:</h4>
+                        <ul>
+                            <li>In-depth historical narratives for each landmark</li>
+                            <li>"Show More" feature revealing additional historical facts and anecdotes</li>
+                            <li>Connections between buildings and significant historical events</li>
+                            <li>Information about the colonial era, independence movement, and modern Nigeria</li>
+                            <li>Cultural significance of each site in Lagos's development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== COLOR SCHEMA ==================== -->
+        <section id="colors" class="plan-section">
+            <h2>Color Schema</h2>
+            <div class="content-block">
+                <div class="color-palette">
+                    <div class="color-swatch primary-green">
+                        <span class="color-hex">#008751</span>
+                        <span class="color-name">Nigeria Green</span>
+                        <span class="color-usage">Primary Brand Color</span>
+                    </div>
+                    <div class="color-swatch primary-white">
+                        <span class="color-hex">#FFFFFF</span>
+                        <span class="color-name">White</span>
+                        <span class="color-usage">Background &amp; Contrast</span>
+                    </div>
+                    <div class="color-swatch gold-accent">
+                        <span class="color-hex">#C4A35A</span>
+                        <span class="color-name">Gold Accent</span>
+                        <span class="color-usage">Highlights &amp; Borders</span>
+                    </div>
+                    <div class="color-swatch dark-green">
+                        <span class="color-hex">#006B3E</span>
+                        <span class="color-name">Dark Green</span>
+                        <span class="color-usage">Footer &amp; Gradients</span>
+                    </div>
+                    <div class="color-swatch text-dark">
+                        <span class="color-hex">#1A1A1A</span>
+                        <span class="color-name">Text Dark</span>
+                        <span class="color-usage">Body Text</span>
+                    </div>
+                    <div class="color-swatch background-light">
+                        <span class="color-hex">#F5F5F5</span>
+                        <span class="color-name">Background Light</span>
+                        <span class="color-usage">Page Background</span>
+                    </div>
+                </div>
+                
+                <div class="color-usage">
+                    <h3>Color Usage Guide</h3>
+                    <table class="color-table">
+                        <thead>
+                            <tr>
+                                <th>Color</th>
+                                <th>Usage</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="color-dot primary-green"></span> Nigeria Green</td>
+                                <td>Headers, buttons, primary links, navigation active state</td>
+                                <td><span style="background:#008751;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">Button</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="color-dot primary-white"></span> White</td>
+                                <td>Card backgrounds, text on dark backgrounds, contrast</td>
+                                <td><span style="background:#008751;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">White Text</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="color-dot gold-accent"></span> Gold Accent</td>
+                                <td>Borders, highlights, hover states, active elements, decorative elements</td>
+                                <td><span style="border-bottom:3px solid #C4A35A;display:inline-block;">Gold Underline</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="color-dot dark-green"></span> Dark Green</td>
+                                <td>Footer, gradient backgrounds, dark sections, depth</td>
+                                <td><span style="background:#006B3E;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">Dark Section</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="color-dot text-dark"></span> Text Dark</td>
+                                <td>Primary body text, paragraphs, readable content</td>
+                                <td style="color:#1A1A1A;">Body Text Example</td>
+                            </tr>
+                            <tr>
+                                <td><span class="color-dot background-light"></span> Background Light</td>
+                                <td>Page background, section backgrounds, contrast</td>
+                                <td><span style="background:#F5F5F5;padding:4px 12px;border-radius:4px;display:inline-block;">Light Background</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="color-demo">
+                    <h3>Color Demonstration</h3>
+                    <div class="demo-section" style="background:var(--background-light);padding:1.5rem;border-radius:8px;">
+                        <h4 style="color:var(--primary-green);">Main Heading with Nigeria Green</h4>
+                        <p style="color:var(--text-dark);">This is body text with a <a href="#" style="color:var(--primary-green);font-weight:bold;">green link</a> and a <span style="background:var(--gold-accent);color:#fff;padding:4px 12px;border-radius:4px;">gold accent badge</span>.</p>
+                        <div style="background:var(--primary-green);color:#fff;padding:1.5rem;border-radius:8px;margin-top:0.5rem;">
+                            <p style="color:#fff;margin:0;">This is a green section with white text for emphasis.</p>
+                        </div>
+                        <div style="border:3px solid var(--gold-accent);padding:1.5rem;border-radius:8px;margin-top:0.5rem;">
+                            <p style="margin:0;">This section features a gold accent border for visual interest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== TYPOGRAPHY ==================== -->
+        <section id="typography" class="plan-section">
+            <h2>Typography</h2>
+            <div class="content-block">
+                <div class="font-showcase">
+                    <div class="font-card">
+                        <h3 style="font-family:'Playfair Display',serif;font-size:2.5rem;">Playfair Display</h3>
+                        <p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;">Usage: Headings (h1, h2, h3)</p>
+                        <p style="font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;">Style: Elegant, sophisticated, serif font with high contrast</p>
+                        <hr style="margin:1rem 0;">
+                        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;">"Lagos Island's architecture tells the story of Nigeria's journey."</p>
+                    </div>
+                    
+                    <div class="font-card">
+                        <h3 style="font-family:'Open Sans',sans-serif;font-size:2.5rem;">Open Sans</h3>
+                        <p style="font-family:'Open Sans',sans-serif;font-size:1rem;font-weight:700;">Usage: Body text, paragraphs, navigation</p>
+                        <p style="font-family:'Open Sans',sans-serif;font-size:0.95rem;">Style: Clean, readable, sans-serif font with excellent legibility</p>
+                        <hr style="margin:1rem 0;">
+                        <p style="font-family:'Open Sans',sans-serif;font-size:1.1rem;">Discover the historical architecture that shaped Lagos Island.</p>
+                    </div>
+                </div>
+                
+                <div class="typography-specs">
+                    <h3>Typography Specifications</h3>
+                    <table class="typography-table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Font</th>
+                                <th>Weight</th>
+                                <th>Size</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>H1 Headings</td>
+                                <td>Playfair Display</td>
+                                <td>700</td>
+                                <td>2.5rem</td>
+                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:#008751;">Heading 1</td>
+                            </tr>
+                            <tr>
+                                <td>H2 Headings</td>
+                                <td>Playfair Display</td>
+                                <td>700</td>
+                                <td>2rem</td>
+                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;color:#008751;">Heading 2</td>
+                            </tr>
+                            <tr>
+                                <td>H3 Headings</td>
+                                <td>Playfair Display</td>
+                                <td>700</td>
+                                <td>1.5rem</td>
+                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:#008751;">Heading 3</td>
+                            </tr>
+                            <tr>
+                                <td>Body Text</td>
+                                <td>Open Sans</td>
+                                <td>400</td>
+                                <td>1rem</td>
+                                <td style="font-family:'Open Sans',sans-serif;font-weight:400;font-size:1rem;">Body text example</td>
+                            </tr>
+                            <tr>
+                                <td>Navigation</td>
+                                <td>Open Sans</td>
+                                <td>600</td>
+                                <td>1rem</td>
+                                <td style="font-family:'Open Sans',sans-serif;font-weight:600;font-size:1rem;color:#008751;">Navigation Link</td>
+                            </tr>
+                            <tr>
+                                <td>Subtext</td>
+                                <td>Open Sans</td>
+                                <td>400</td>
+                                <td>0.9rem</td>
+                                <td style="font-family:'Open Sans',sans-serif;font-weight:400;font-size:0.9rem;color:#666;">Subtext example</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== WIREFRAMES ==================== -->
+        <section id="wireframes" class="plan-section">
+            <h2>Wireframes</h2>
+            <div class="content-block">
+                <div class="wireframe-grid">
+                    <!-- Mobile Wireframe -->
+                    <div class="wireframe-card">
+                        <h3>📱 Mobile View</h3>
+                        <p class="wireframe-label">(max-width: 600px)</p>
+                        <div class="wireframe mobile-wireframe">
+                            <div class="wf-header">
+                                <div class="wf-logo">🏛️</div>
+                                <div class="wf-hamburger">☰</div>
+                            </div>
+                            <div class="wf-hero">
+                                <div class="wf-hero-text">Lagos Island</div>
+                                <div class="wf-hero-sub">Heritage</div>
+                            </div>
+                            <div class="wf-section">
+                                <div class="wf-section-title">Featured Landmarks</div>
+                                <div class="wf-card-list">
+                                    <div class="wf-card">
+                                        <div class="wf-card-img">⛪</div>
+                                        <div class="wf-card-title">Cathedral Church</div>
+                                    </div>
+                                    <div class="wf-card">
+                                        <div class="wf-card-img">🏛️</div>
+                                        <div class="wf-card-title">Freedom Park</div>
+                                    </div>
+                                    <div class="wf-card">
+                                        <div class="wf-card-img">🚂</div>
+                                        <div class="wf-card-title">Railway HQ</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wf-section">
+                                <div class="wf-section-title">Filter by Style</div>
+                                <div class="wf-filter-buttons">
+                                    <div class="wf-filter-btn">All</div>
+                                    <div class="wf-filter-btn">Colonial</div>
+                                    <div class="wf-filter-btn">Afro-Brazilian</div>
+                                </div>
+                            </div>
+                            <div class="wf-footer">
+                                <div class="wf-footer-text">© 2024 Lagos Island Heritage</div>
+                            </div>
+                        </div>
+                        <div class="wireframe-notes">
+                            <h4>Mobile Layout Notes:</h4>
+                            <ul>
+                                <li>Single column layout for easy scrolling</li>
+                                <li>Hamburger menu for navigation</li>
+                                <li>Hero section with site name</li>
+                                <li>Card-based content display</li>
+                                <li>Filter buttons in a horizontal scroll</li>
+                                <li>Touch-friendly buttons and links</li>
+                                <li>Optimized for thumb navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Wireframe -->
+                    <div class="wireframe-card">
+                        <h3>💻 Desktop View</h3>
+                        <p class="wireframe-label">(min-width: 1025px)</p>
+                        <div class="wireframe desktop-wireframe">
+                            <div class="wf-header">
+                                <div class="wf-logo">🏛️ Lagos Island Heritage</div>
+                                <div class="wf-nav">
+                                    <div class="wf-nav-item">Home</div>
+                                    <div class="wf-nav-item">Landmarks</div>
+                                    <div class="wf-nav-item">Favorites</div>
+                                    <div class="wf-nav-item">Contact</div>
+                                </div>
+                            </div>
+                            <div class="wf-hero">
+                                <div class="wf-hero-text">Historical Architecture of Lagos Island</div>
+                                <div class="wf-hero-sub">Discover the Rich Heritage of Nigeria's Former Capital</div>
+                                <div class="wf-hero-button">Explore Landmarks</div>
+                            </div>
+                            <div class="wf-grid-3">
+                                <div class="wf-section">
+                                    <div class="wf-section-title">Featured Landmarks</div>
+                                    <div class="wf-grid-cards">
+                                        <div class="wf-card">
+                                            <div class="wf-card-img">⛪</div>
+                                            <div class="wf-card-title">Cathedral Church</div>
+                                            <div class="wf-card-desc">1867 • Neo-Gothic</div>
+                                        </div>
+                                        <div class="wf-card">
+                                            <div class="wf-card-img">🏛️</div>
+                                            <div class="wf-card-title">Freedom Park</div>
+                                            <div class="wf-card-desc">1885 • Colonial</div>
+                                        </div>
+                                        <div class="wf-card">
+                                            <div class="wf-card-img">🏠</div>
+                                            <div class="wf-card-title">Brazilian Baracoon</div>
+                                            <div class="wf-card-desc">1850 • Afro-Brazilian</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wf-section">
+                                    <div class="wf-section-title">Filter by Style</div>
+                                    <div class="wf-filter-group">
+                                        <div class="wf-filter-btn active">All</div>
+                                        <div class="wf-filter-btn">Colonial</div>
+                                        <div class="wf-filter-btn">Afro-Brazilian</div>
+                                        <div class="wf-filter-btn">Modernist</div>
+                                    </div>
+                                    <div class="wf-search">
+                                        <div class="wf-input"></div>
+                                        <div class="wf-button">Search</div>
+                                    </div>
+                                </div>
+                                <div class="wf-section">
+                                    <div class="wf-section-title">Quick Facts</div>
+                                    <div class="wf-tips">
+                                        <div class="wf-tip">🏛️ 6 Historical Landmarks</div>
+                                        <div class="wf-tip">📅 150+ Years of History</div>
+                                        <div class="wf-tip">🌿 3 Architectural Styles</div>
+                                        <div class="wf-tip">📍 Lagos Island, Nigeria</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wf-footer">
+                                <div class="wf-footer-links">
+                                    <div class="wf-footer-link">About</div>
+                                    <div class="wf-footer-link">Contact</div>
+                                    <div class="wf-footer-link">Privacy</div>
+                                    <div class="wf-footer-link">Terms</div>
+                                </div>
+                                <div class="wf-footer-text">© 2024 Lagos Island Heritage</div>
+                            </div>
+                        </div>
+                        <div class="wireframe-notes">
+                            <h4>Desktop Layout Notes:</h4>
+                            <ul>
+                                <li>Full horizontal navigation with dropdown capability</li>
+                                <li>Hero section with call-to-action button</li>
+                                <li>3-column grid layout for content organization</li>
+                                <li>Side-by-side filter buttons for easy access</li>
+                                <li>Search bar for finding specific landmarks</li>
+                                <li>Footer with additional navigation links</li>
+                                <li>Hover effects for interactive elements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> Lawrence Adekunle | Lagos Island Heritage</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
