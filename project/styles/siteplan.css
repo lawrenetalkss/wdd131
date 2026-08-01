@@ -802,3 +802,185 @@ footer p {
     font-size: 0.9rem;
     opacity: 0.9;
 }
+
+/* ============================================
+   DEMO & EXAMPLE STYLES (No Inline Styles)
+   ============================================ */
+
+/* Color Demo Section */
+.demo-section {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+}
+
+.demo-section h4 {
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+}
+
+.demo-link {
+    color: var(--primary-green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.demo-link:hover {
+    text-decoration: underline;
+}
+
+.demo-badge {
+    background: var(--gold-accent);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.demo-green-section {
+    background: var(--primary-green);
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+}
+
+.demo-green-section p {
+    color: #fff;
+    margin: 0;
+}
+
+.demo-border-section {
+    border: 3px solid var(--gold-accent);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+}
+
+.demo-border-section p {
+    margin: 0;
+}
+
+/* Example Buttons and Elements for Color Table */
+.example-btn {
+    background: var(--primary-green);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.example-white-text {
+    background: var(--primary-green);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.example-underline {
+    border-bottom: 3px solid var(--gold-accent);
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.example-dark {
+    background: var(--dark-green);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.example-body {
+    color: var(--text-dark);
+}
+
+.example-light {
+    background: var(--background-light);
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #ddd;
+}
+
+/* Typography Example Styles */
+.example-h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+}
+
+.example-h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-green);
+}
+
+.example-h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-green);
+}
+
+.example-body-text {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.example-nav {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary-green);
+}
+
+.example-subtext {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Font Card Styles */
+.playfair-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+.opensans-card h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+}
+
+.font-usage {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.font-style {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.font-quote {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.playfair-card .font-quote {
+    font-family: 'Playfair Display', serif;
+}
+
+.opensans-card .font-quote {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Color Table Example Column */
+.example-col {
+    min-width: 120px;
+}

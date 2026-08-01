@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Website planning document for the Lagos Island Heritage project - WDD 131">
     <meta name="author" content="Lawrence Adekunle">
-    <title>Lagos Island Heritage - Website Plan</title>
+    <title>Lagos Island Heritage - Site Plan</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -197,39 +197,39 @@
                             <tr>
                                 <th>Color</th>
                                 <th>Usage</th>
-                                <th>Example</th>
+                                <th class="example-col">Example</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><span class="color-dot primary-green"></span> Nigeria Green</td>
                                 <td>Headers, buttons, primary links, navigation active state</td>
-                                <td><span style="background:#008751;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">Button</span></td>
+                                <td><span class="example-btn">Button</span></td>
                             </tr>
                             <tr>
                                 <td><span class="color-dot primary-white"></span> White</td>
                                 <td>Card backgrounds, text on dark backgrounds, contrast</td>
-                                <td><span style="background:#008751;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">White Text</span></td>
+                                <td><span class="example-white-text">White Text</span></td>
                             </tr>
                             <tr>
                                 <td><span class="color-dot gold-accent"></span> Gold Accent</td>
                                 <td>Borders, highlights, hover states, active elements, decorative elements</td>
-                                <td><span style="border-bottom:3px solid #C4A35A;display:inline-block;">Gold Underline</span></td>
+                                <td><span class="example-underline">Gold Underline</span></td>
                             </tr>
                             <tr>
                                 <td><span class="color-dot dark-green"></span> Dark Green</td>
                                 <td>Footer, gradient backgrounds, dark sections, depth</td>
-                                <td><span style="background:#006B3E;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;">Dark Section</span></td>
+                                <td><span class="example-dark">Dark Section</span></td>
                             </tr>
                             <tr>
                                 <td><span class="color-dot text-dark"></span> Text Dark</td>
                                 <td>Primary body text, paragraphs, readable content</td>
-                                <td style="color:#1A1A1A;">Body Text Example</td>
+                                <td class="example-body">Body Text Example</td>
                             </tr>
                             <tr>
                                 <td><span class="color-dot background-light"></span> Background Light</td>
                                 <td>Page background, section backgrounds, contrast</td>
-                                <td><span style="background:#F5F5F5;padding:4px 12px;border-radius:4px;display:inline-block;">Light Background</span></td>
+                                <td><span class="example-light">Light Background</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -237,14 +237,14 @@
                 
                 <div class="color-demo">
                     <h3>Color Demonstration</h3>
-                    <div class="demo-section" style="background:var(--background-light);padding:1.5rem;border-radius:8px;">
-                        <h4 style="color:var(--primary-green);">Main Heading with Nigeria Green</h4>
-                        <p style="color:var(--text-dark);">This is body text with a <a href="#" style="color:var(--primary-green);font-weight:bold;">green link</a> and a <span style="background:var(--gold-accent);color:#fff;padding:4px 12px;border-radius:4px;">gold accent badge</span>.</p>
-                        <div style="background:var(--primary-green);color:#fff;padding:1.5rem;border-radius:8px;margin-top:0.5rem;">
-                            <p style="color:#fff;margin:0;">This is a green section with white text for emphasis.</p>
+                    <div class="demo-section">
+                        <h4>Main Heading with Nigeria Green</h4>
+                        <p>This is body text with a <a href="#" class="demo-link">green link</a> and a <span class="demo-badge">gold accent badge</span>.</p>
+                        <div class="demo-green-section">
+                            <p>This is a green section with white text for emphasis.</p>
                         </div>
-                        <div style="border:3px solid var(--gold-accent);padding:1.5rem;border-radius:8px;margin-top:0.5rem;">
-                            <p style="margin:0;">This section features a gold accent border for visual interest.</p>
+                        <div class="demo-border-section">
+                            <p>This section features a gold accent border for visual interest.</p>
                         </div>
                     </div>
                 </div>
@@ -256,20 +256,20 @@
             <h2>Typography</h2>
             <div class="content-block">
                 <div class="font-showcase">
-                    <div class="font-card">
-                        <h3 style="font-family:'Playfair Display',serif;font-size:2.5rem;">Playfair Display</h3>
-                        <p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;">Usage: Headings (h1, h2, h3)</p>
-                        <p style="font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;">Style: Elegant, sophisticated, serif font with high contrast</p>
-                        <hr style="margin:1rem 0;">
-                        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;">"Lagos Island's architecture tells the story of Nigeria's journey."</p>
+                    <div class="font-card playfair-card">
+                        <h3>Playfair Display</h3>
+                        <p class="font-usage">Usage: Headings (h1, h2, h3)</p>
+                        <p class="font-style">Style: Elegant, sophisticated, serif font with high contrast</p>
+                        <hr>
+                        <p class="font-quote">"Lagos Island's architecture tells the story of Nigeria's journey."</p>
                     </div>
                     
-                    <div class="font-card">
-                        <h3 style="font-family:'Open Sans',sans-serif;font-size:2.5rem;">Open Sans</h3>
-                        <p style="font-family:'Open Sans',sans-serif;font-size:1rem;font-weight:700;">Usage: Body text, paragraphs, navigation</p>
-                        <p style="font-family:'Open Sans',sans-serif;font-size:0.95rem;">Style: Clean, readable, sans-serif font with excellent legibility</p>
-                        <hr style="margin:1rem 0;">
-                        <p style="font-family:'Open Sans',sans-serif;font-size:1.1rem;">Discover the historical architecture that shaped Lagos Island.</p>
+                    <div class="font-card opensans-card">
+                        <h3>Open Sans</h3>
+                        <p class="font-usage">Usage: Body text, paragraphs, navigation</p>
+                        <p class="font-style">Style: Clean, readable, sans-serif font with excellent legibility</p>
+                        <hr>
+                        <p class="font-quote">Discover the historical architecture that shaped Lagos Island.</p>
                     </div>
                 </div>
                 
@@ -291,42 +291,42 @@
                                 <td>Playfair Display</td>
                                 <td>700</td>
                                 <td>2.5rem</td>
-                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:#008751;">Heading 1</td>
+                                <td class="example-h1">Heading 1</td>
                             </tr>
                             <tr>
                                 <td>H2 Headings</td>
                                 <td>Playfair Display</td>
                                 <td>700</td>
                                 <td>2rem</td>
-                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;color:#008751;">Heading 2</td>
+                                <td class="example-h2">Heading 2</td>
                             </tr>
                             <tr>
                                 <td>H3 Headings</td>
                                 <td>Playfair Display</td>
                                 <td>700</td>
                                 <td>1.5rem</td>
-                                <td style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:#008751;">Heading 3</td>
+                                <td class="example-h3">Heading 3</td>
                             </tr>
                             <tr>
                                 <td>Body Text</td>
                                 <td>Open Sans</td>
                                 <td>400</td>
                                 <td>1rem</td>
-                                <td style="font-family:'Open Sans',sans-serif;font-weight:400;font-size:1rem;">Body text example</td>
+                                <td class="example-body-text">Body text example</td>
                             </tr>
                             <tr>
                                 <td>Navigation</td>
                                 <td>Open Sans</td>
                                 <td>600</td>
                                 <td>1rem</td>
-                                <td style="font-family:'Open Sans',sans-serif;font-weight:600;font-size:1rem;color:#008751;">Navigation Link</td>
+                                <td class="example-nav">Navigation Link</td>
                             </tr>
                             <tr>
                                 <td>Subtext</td>
                                 <td>Open Sans</td>
                                 <td>400</td>
                                 <td>0.9rem</td>
-                                <td style="font-family:'Open Sans',sans-serif;font-weight:400;font-size:0.9rem;color:#666;">Subtext example</td>
+                                <td class="example-subtext">Subtext example</td>
                             </tr>
                         </tbody>
                     </table>
