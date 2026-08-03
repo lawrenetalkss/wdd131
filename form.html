@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- ✅ FIX 1: Added Meta Description -->
+    <!-- Meta Description -->
     <meta name="description" content="Share your product experience by submitting a review. Rate features, installation date, and provide feedback on our products." />
     
-    <!-- ✅ FIX 2: Added Meta Author -->
+    <!-- Meta Author -->
     <meta name="author" content="Lawrence Adekunle" />
     
     <title>Product Review Form</title>
     
-    <!-- ✅ FIX 3: Removed any Bootstrap classes and used custom CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/form.css" />
 </head>
 <body>
-    <!-- ✅ FIX 4: Added <header> element -->
+    <!-- Header -->
     <header>
         <div class="header-content">
             <h1>Product Review</h1>
@@ -25,8 +25,7 @@
     </header>
 
     <main>
-        <div class="card">
-            <!-- ✅ FIX 5: Added proper action with GET method -->
+        <div class="review-card">
             <form id="reviewForm" action="review.html" method="get" novalidate>
 
                 <!-- 1. Product Name (select, required) -->
@@ -34,15 +33,33 @@
                     <label for="productSelect">Product Name <span class="label-hint">*</span></label>
                     <select id="productSelect" name="product" required>
                         <option value="" disabled selected>Select a Product …</option>
-                        <!-- dynamic options injected by JS -->
                     </select>
                 </div>
 
-                <!-- 2. Overall Rating (radio, required) ✅ 5 radios -->
+                <!-- 2. Overall Rating (radio, required) -->
                 <div class="form-group">
                     <label>Overall Rating <span class="label-hint">*</span></label>
                     <div class="rating-group" id="ratingGroup">
-                        <!-- 5 radio buttons injected by JS -->
+                        <span class="rating-option">
+                            <input type="radio" name="rating" id="rating1" value="1" required>
+                            <label for="rating1" class="star-label">★☆☆☆☆</label>
+                        </span>
+                        <span class="rating-option">
+                            <input type="radio" name="rating" id="rating2" value="2" required>
+                            <label for="rating2" class="star-label">★★☆☆☆</label>
+                        </span>
+                        <span class="rating-option">
+                            <input type="radio" name="rating" id="rating3" value="3" required>
+                            <label for="rating3" class="star-label">★★★☆☆</label>
+                        </span>
+                        <span class="rating-option">
+                            <input type="radio" name="rating" id="rating4" value="4" required>
+                            <label for="rating4" class="star-label">★★★★☆</label>
+                        </span>
+                        <span class="rating-option">
+                            <input type="radio" name="rating" id="rating5" value="5" required>
+                            <label for="rating5" class="star-label">★★★★★</label>
+                        </span>
                     </div>
                 </div>
 
@@ -52,11 +69,26 @@
                     <input type="date" id="installDate" name="installDate" required />
                 </div>
 
-                <!-- 4. Useful Features (checkboxes) ✅ 4 checkboxes -->
+                <!-- 4. Useful Features (checkboxes) -->
                 <div class="form-group">
                     <label>Which features did you find useful? <span class="label-hint">(check all that apply)</span></label>
-                    <div class="checkbox-grid" id="featureCheckboxes">
-                        <!-- 4 checkboxes injected by JS -->
+                    <div class="checkbox-grid">
+                        <span class="checkbox-item">
+                            <input type="checkbox" id="featDurability" name="features" value="durability">
+                            <label for="featDurability">Durability</label>
+                        </span>
+                        <span class="checkbox-item">
+                            <input type="checkbox" id="featEase" name="features" value="ease">
+                            <label for="featEase">Ease of Use</label>
+                        </span>
+                        <span class="checkbox-item">
+                            <input type="checkbox" id="featPerformance" name="features" value="performance">
+                            <label for="featPerformance">Performance</label>
+                        </span>
+                        <span class="checkbox-item">
+                            <input type="checkbox" id="featDesign" name="features" value="design">
+                            <label for="featDesign">Design</label>
+                        </span>
                     </div>
                 </div>
 
@@ -72,17 +104,17 @@
                     <input type="text" id="userName" name="userName" placeholder="e.g. Lawrence Adekunle" />
                 </div>
 
-                <!-- action buttons -->
+                <!-- Action buttons -->
                 <div class="action-bar">
-                    <button type="reset" class="btn btn-outline">Clear</button>
-                    <button type="submit" class="btn btn-primary">Post Review</button>
+                    <button type="reset" class="button button-outline">Clear</button>
+                    <button type="submit" class="button button-primary">Post Review</button>
                 </div>
 
             </form>
         </div>
     </main>
 
-    <!-- ✅ FIX 6: Added <footer> element -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <span>&copy; 2024 Surulere, Lagos, Nigeria</span>
@@ -91,7 +123,7 @@
         </div>
     </footer>
 
-    <!-- ✅ FIX 7: Correct script path with defer -->
+    <!-- ✅ JavaScript - Correct path -->
     <script src="scripts/script.js" defer></script>
 </body>
 </html>

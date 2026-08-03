@@ -19,14 +19,13 @@ body {
     color: #1e1e2a;
 }
 
-/* ----- header styles (no Bootstrap) ----- */
+/* ----- header styles ----- */
 header {
     background: linear-gradient(135deg, #2c2c3a, #1e1e2a);
     color: white;
     padding: 2rem 1.5rem;
     text-align: center;
     border-radius: 2rem 2rem 0 0;
-    margin-bottom: 0;
     max-width: 820px;
     width: 100%;
     margin-left: auto;
@@ -54,36 +53,13 @@ main {
     margin: 0 auto;
 }
 
-.card {
+/* ✅ FIXED: Changed from .card to .review-card */
+.review-card {
     width: 100%;
     background: #ffffff;
     border-radius: 0 0 2rem 2rem;
     padding: 2rem 2rem 1.8rem;
     box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
-}
-
-h1 {
-    font-size: 1.9rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    border-bottom: 2px solid #eae6e0;
-    padding-bottom: 0.65rem;
-    margin-bottom: 1.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-h1 small {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #7a7a8a;
-    margin-left: auto;
-    background: #f0ede8;
-    padding: 0.2rem 1rem;
-    border-radius: 40px;
-    letter-spacing: 0.3px;
 }
 
 .form-group {
@@ -221,7 +197,8 @@ textarea {
     flex-wrap: wrap;
 }
 
-.btn {
+/* ✅ FIXED: Changed from .btn to .button */
+.button {
     border: none;
     background: #eae6e0;
     padding: 0.7rem 2.2rem;
@@ -235,24 +212,24 @@ textarea {
     border: 1px solid transparent;
 }
 
-.btn-primary {
+.button-primary {
     background: #2c2c3a;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.btn-primary:hover {
+.button-primary:hover {
     background: #1e1e2a;
     transform: scale(0.98);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-outline {
+.button-outline {
     background: transparent;
     border-color: #d6d2ca;
 }
 
-.btn-outline:hover {
+.button-outline:hover {
     background: #f0ede8;
 }
 
@@ -265,7 +242,6 @@ footer {
     background: #2c2c3a;
     color: #d6d2ca;
     border-radius: 0 0 2rem 2rem;
-    margin-top: 0;
 }
 
 .footer-content {
@@ -300,13 +276,9 @@ footer {
         font-size: 1.6rem;
     }
     
-    .card {
+    .review-card {
         padding: 1.5rem 1rem;
         border-radius: 0 0 1rem 1rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
     }
     
     .rating-group,
@@ -319,7 +291,7 @@ footer {
         flex-direction: column;
     }
     
-    .btn {
+    .button {
         width: 100%;
         justify-content: center;
         text-align: center;
