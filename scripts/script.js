@@ -6,7 +6,7 @@
     'use strict';
 
     // ----- product data -----
-    const products = [
+    var products = [
         { name: 'EcoClean 3000' },
         { name: 'SmartTrack Pro' },
         { name: 'AquaPure Filter' },
@@ -16,13 +16,13 @@
     ];
 
     // ----- 1. populate product <select> -----
-    const selectEl = document.getElementById('productSelect');
+    var selectEl = document.getElementById('productSelect');
     if (selectEl) {
         // Clear existing options
         selectEl.innerHTML = '';
         
         // Add placeholder option
-        const placeholder = document.createElement('option');
+        var placeholder = document.createElement('option');
         placeholder.value = '';
         placeholder.disabled = true;
         placeholder.selected = true;
@@ -31,7 +31,7 @@
         
         // Add product options
         products.forEach(function(p) {
-            const opt = document.createElement('option');
+            var opt = document.createElement('option');
             opt.value = p.name;
             opt.textContent = p.name;
             selectEl.appendChild(opt);
