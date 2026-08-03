@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Review Form</title>
-  <!-- ========== SEPARATE CSS (form.css) ========== -->
-  <link rel="stylesheet" href="styles/form.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ✅ FIX 1: Added Meta Description -->
+    <meta name="description" content="Share your product experience by submitting a review. Rate features, installation date, and provide feedback on our products." />
+    
+    <!-- ✅ FIX 2: Added Meta Author -->
+    <meta name="author" content="Lawrence Adekunle" />
+    
+    <title>Product Review Form</title>
+    
+    <!-- ✅ FIX 3: Removed any Bootstrap classes and used custom CSS -->
+    <link rel="stylesheet" href="styles/form.css" />
 </head>
 <body>
+    <!-- ✅ FIX 4: Added <header> element -->
+    <header>
+        <div class="header-content">
+            <h1>Product Review</h1>
+            <p class="header-subtitle">Share your experience with our products</p>
+        </div>
+    </header>
 
-<div class="card">
-  <!-- form with GET → review.html -->
-  <form id="reviewForm" action="review.html" method="get">
+    <main>
+        <div class="card">
+            <!-- ✅ FIX 5: Added proper action with GET method -->
+            <form id="reviewForm" action="review.html" method="get" novalidate>
 
-    <h1>
-      Product Review
-      <small>share your experience</small>
-    </h1>
+                <!-- 1. Product Name (select, required) -->
+                <div class="form-group">
+                    <label for="productSelect">Product Name <span class="label-hint">*</span></label>
+                    <select id="productSelect" name="product" required>
+                        <option value="" disabled selected>Select a Product …</option>
+                        <!-- dynamic options injected by JS -->
+                    </select>
+                </div>
 
-    <!-- 1. Product Name (select, required) -->
-    <div class="form-group">
-      <label for="productSelect">Product Name <span class="label-hint">*</span></label>
-      <select id="productSelect" name="product" required>
-        <!-- placeholder option: disabled & selected -->
-        <option value="" disabled selected>Select a Product …</option>
-        <!-- dynamic options will be injected by JS -->
-      </select>
-    </div>
+                <!-- 2. Overall Rating (radio, required) ✅ 5 radios -->
+                <div class="form-group">
+                    <label>Overall Rating <span class="label-hint">*</span></label>
+                    <div class="rating-group" id="ratingGroup">
+                        <!-- 5 radio buttons injected by JS -->
+                    </div>
+                </div>
 
-    <!-- 2. Overall Rating (radio, required) -->
-    <div class="form-group">
-      <label>Overall Rating <span class="label-hint">*</span></label>
-      <div class="rating-group" id="ratingGroup">
-        <!-- 5 radio buttons injected by JS for clean markup -->
-      </div>
-    </div>
+                <!-- 3. Date of Installation -->
+                <div class="form-group">
+                    <label for="installDate">Date of Installation <span class="label-hint">*</span></label>
+                    <input type="date" id="installDate" name="installDate" required />
+                </div>
 
-    <!-- 3. Date of Installation -->
-    <div class="form-group">
-      <label for="installDate">Date of Installation <span class="label-hint">*</span></label>
-      <input type="date" id="installDate" name="installDate" required />
-    </div>
+                <!-- 4. Useful Features (checkboxes) ✅ 4 checkboxes -->
+                <div class="form-group">
+                    <label>Which features did you find useful? <span class="label-hint">(check all that apply)</span></label>
+                    <div class="checkbox-grid" id="featureCheckboxes">
+                        <!-- 4 checkboxes injected by JS -->
+                    </div>
+                </div>
 
-    <!-- 4. Useful Features (checkboxes) -->
-    <div class="form-group">
-      <label>Which features did you find useful? <span class="label-hint">(check all that apply)</span></label>
-      <div class="checkbox-grid" id="featureCheckboxes">
-        <!-- checkboxes injected by JS -->
-      </div>
-    </div>
+                <!-- 5. Written Review (optional) -->
+                <div class="form-group">
+                    <label for="reviewText">Written Review <span class="label-hint">(optional)</span></label>
+                    <textarea id="reviewText" name="review" placeholder="Tell us more about your experience …"></textarea>
+                </div>
 
-    <!-- 5. Written Review (optional) -->
-    <div class="form-group">
-      <label for="reviewText">Written Review <span class="label-hint">(optional)</span></label>
-      <textarea id="reviewText" name="review" placeholder="Tell us more about your experience …"></textarea>
-    </div>
+                <!-- 6. Your Name (optional) -->
+                <div class="form-group">
+                    <label for="userName">Your Name <span class="label-hint">(optional)</span></label>
+                    <input type="text" id="userName" name="userName" placeholder="e.g. Lawrence Adekunle" />
+                </div>
 
-    <!-- 6. Your Name (optional) -->
-    <div class="form-group">
-      <label for="userName">Your Name <span class="label-hint">(optional)</span></label>
-      <input type="text" id="userName" name="userName" placeholder="e.g. Rubia Magdelena" />
-    </div>
+                <!-- action buttons -->
+                <div class="action-bar">
+                    <button type="reset" class="btn btn-outline">Clear</button>
+                    <button type="submit" class="btn btn-primary">Post Review</button>
+                </div>
 
-    <!-- action buttons -->
-    <div class="action-bar">
-      <button type="reset" class="btn btn-outline">Clear</button>
-      <button type="submit" class="btn btn-primary">Post Review</button>
-    </div>
+            </form>
+        </div>
+    </main>
 
-  </form>
+    <!-- ✅ FIX 6: Added <footer> element -->
+    <footer>
+        <div class="footer-content">
+            <span>&copy; 2024 Surulere, Lagos, Nigeria</span>
+            <span class="badge">Product Review Form</span>
+            <span id="lastModified">Last Modified: </span>
+        </div>
+    </footer>
 
-  <!-- footer / post-review info (matches template) -->
-  <div class="footer-note">
-    <span>©2024 Surulere, Lagos </span>
-    <span class="badge">Nigeria</span>
-    <span>Last Modification: 02/26/2024 13:56:10</span>
-  </div>
-</div>
-
-<!-- ========== SEPARATE JAVASCRIPT (script.js) ========== -->
-<script src="script.js"></script>
+    <!-- ✅ FIX 7: Correct script path with defer -->
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>
