@@ -53,7 +53,6 @@ main {
     margin: 0 auto;
 }
 
-/* ✅ FIXED: Changed from .card to .review-card */
 .review-card {
     width: 100%;
     background: #ffffff;
@@ -197,7 +196,6 @@ textarea {
     flex-wrap: wrap;
 }
 
-/* ✅ FIXED: Changed from .btn to .button */
 .button {
     border: none;
     background: #eae6e0;

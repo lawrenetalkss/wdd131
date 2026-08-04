@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the historical landmarks of Lagos Island - colonial, Afro-Brazilian, and post-independence architecture.">
+    <meta name="author" content="Lawrence Adekunle">
+    <title>Lagos Island Heritage - Historical Landmarks</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main-large.css">
+    
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/landmarks.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo">🏛️</span>
+                <span class="logo-text">Lagos Island Heritage</span>
+            </a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="landmarks.html" class="active">Landmarks</a></li>
+                <li><a href="favorites.html">Favorites <span id="favorites-count" class="badge">0</span></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Historical Landmarks of Lagos Island</h1>
+            <p>Discover the architectural heritage that tells the story of Nigeria's former capital</p>
+        </section>
+        
+        <!-- Search and Filter -->
+        <section class="search-filter">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search landmarks..." aria-label="Search landmarks">
+                <button onclick="searchLandmarks()" aria-label="Search">🔍</button>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all" onclick="filterLandmarks('all')">All</button>
+                <button class="filter-btn" data-filter="colonial" onclick="filterLandmarks('colonial')">Colonial</button>
+                <button class="filter-btn" data-filter="afro-brazilian" onclick="filterLandmarks('afro-brazilian')">Afro-Brazilian</button>
+                <button class="filter-btn" data-filter="modernist" onclick="filterLandmarks('modernist')">Modernist</button>
+            </div>
+            <div class="result-info">
+                <span id="filter-text">All Landmarks</span>
+                <span id="result-count"></span>
+            </div>
+        </section>
+        
+        <!-- Landmarks Grid -->
+        <section class="landmarks">
+            <div id="landmarks-container" class="landmarks-grid">
+                <!-- Dynamically loaded by JavaScript -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Lagos Island Heritage</h4>
+                <p>Preserving the architectural history of Lagos</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="landmarks.html">Landmarks</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Lawrence Adekunle | Lagos Island Heritage</p>
+            <p id="lastModified">Last Modified: </p>
+        </div>
+    </footer>
+    
+    <div id="notification" class="notification" style="display:none;"></div>
+</body>
+</html>

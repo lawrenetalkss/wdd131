@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the historical architecture of Lagos Island, Nigeria. Explore colonial, Afro-Brazilian, and post-independence landmarks.">
+    <meta name="author" content="Lawrence Adekunle">
+    <title>Lagos Island Heritage - Historical Architecture Guide</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main-large.css">
+    
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo">🏛️</span>
+                <span class="logo-text">Lagos Island Heritage</span>
+            </a>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="landmarks.html">Landmarks</a></li>
+                <li><a href="favorites.html">Favorites <span id="favorites-count" class="badge">0</span></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Historical Architecture of Lagos Island</h1>
+                <p class="hero-subtitle">Discover the Rich Heritage of Nigeria's Former Capital</p>
+                <p class="hero-description">Explore the colonial, Afro-Brazilian, and post-independence architectural treasures that tell the story of Lagos.</p>
+                <a href="landmarks.html" class="btn-primary">Explore Landmarks</a>
+            </div>
+        </section>
+        
+        <!-- Introduction Section -->
+        <section class="introduction">
+            <h2>About Lagos Island</h2>
+            <div class="intro-content">
+                <p>Lagos Island, the historic heart of Lagos, Nigeria, is a living museum of architectural heritage. From the grandeur of colonial-era buildings to the unique Afro-Brazilian structures built by freed slaves returning from Brazil, the island offers a fascinating journey through Nigeria's history.</p>
+                <p>This guide showcases <strong>6 significant landmarks</strong> that represent the diverse architectural styles and historical periods that have shaped Lagos Island.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Landmarks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Architectural Styles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Years of History</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Landmarks Preview -->
+        <section class="featured">
+            <h2>Featured Landmarks</h2>
+            <div id="featured-container" class="featured-grid">
+                <!-- Dynamically loaded by JavaScript -->
+            </div>
+            <div class="view-all">
+                <a href="landmarks.html" class="btn-secondary">View All Landmarks →</a>
+            </div>
+        </section>
+        
+        <!-- Quick Facts -->
+        <section class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-icon">🏛️</span>
+                    <h3>Colonial Architecture</h3>
+                    <p>Buildings from the British colonial era featuring Neo-Gothic and Victorian styles.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🌿</span>
+                    <h3>Afro-Brazilian Style</h3>
+                    <p>Unique architectural style brought by freed slaves returning from Brazil in the 19th century.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🏗️</span>
+                    <h3>Post-Independence</h3>
+                    <p>Modernist structures built after Nigeria's independence in 1960.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">📍</span>
+                    <h3>Historic District</h3>
+                    <p>Lagos Island is home to some of Nigeria's oldest and most significant buildings.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Lagos Island Heritage</h4>
+                <p>Preserving the architectural history of Lagos</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="landmarks.html">Landmarks</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Lawrence Adekunle | Lagos Island Heritage</p>
+            <p id="lastModified">Last Modified: </p>
+        </div>
+    </footer>
+    
+    <div id="notification" class="notification" style="display:none;"></div>
+</body>
+</html>

@@ -1,7 +1,3 @@
-/* ============================================================
-   script.js – Product Review Form
-   ============================================================ */
-
 (function() {
     'use strict';
 
@@ -18,10 +14,8 @@
     // ----- 1. populate product <select> -----
     var selectEl = document.getElementById('productSelect');
     if (selectEl) {
-        // Clear existing options
         selectEl.innerHTML = '';
         
-        // Add placeholder option
         var placeholder = document.createElement('option');
         placeholder.value = '';
         placeholder.disabled = true;
@@ -29,7 +23,6 @@
         placeholder.textContent = 'Select a Product …';
         selectEl.appendChild(placeholder);
         
-        // Add product options
         products.forEach(function(p) {
             var opt = document.createElement('option');
             opt.value = p.name;
@@ -64,75 +57,74 @@
         lastModified.textContent = 'Last Modified: ' + dateStr + ' ' + timeStr;
     }
 
-    // ----- 4. form validation on submit -----
-    var form = document.getElementById('reviewForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            // Check if a rating is selected
-            var ratingSelected = document.querySelector('input[name="rating"]:checked');
-            if (!ratingSelected) {
-                e.preventDefault();
-                alert('Please select a rating before submitting.');
-                return;
-            }
-            
-            // Check if product is selected
-            var product = document.getElementById('productSelect');
-            if (!product.value) {
-                e.preventDefault();
-                alert('Please select a product before submitting.');
-                return;
-            }
-            
-            // Check if date is selected
-            var date = document.getElementById('installDate');
-            if (!date.value) {
-                e.preventDefault();
-                alert('Please select the date of installation.');
-                return;
-            }
-            
-            // Check if at least one feature is selected
-            var featuresSelected = document.querySelectorAll('input[name="features"]:checked');
-            if (featuresSelected.length === 0) {
-                e.preventDefault();
-                alert('Please select at least one useful feature.');
-                return;
-            }
-            
-            // Form is valid - it will submit to review.html
-            console.log('Form submitted successfully!');
-            console.log('Selected features:', featuresSelected.length);
-            
-            // Show success message
-            alert('✅ Thank you for your review!');
+    // ----- 4. Handle checkbox required validation -----
+    var checkboxes = document.querySelectorAll('input[name="features"]');
+    if (checkboxes.length > 0) {
+        checkboxes.forEach(function(cb) {
+            cb.addEventListener('change', function() {
+                var checked = document.querySelectorAll('input[name="features"]:checked');
+                checkboxes.forEach(function(c) {
+                    if (checked.length > 0) {
+                        c.removeAttribute('required');
+                        c.removeAttribute('aria-required');
+                    } else {
+                        checkboxes[0].setAttribute('required', 'required');
+                        checkboxes[0].setAttribute('aria-required', 'true');
+                    }
+                });
+            });
         });
     }
 
-    // ----- 5. Log success messages -----
+    // ----- 5. Handle form submission with localStorage -----
+    var form = document.getElementById('reviewForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Use HTML5 validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Get form data
+            var formData = {
+                product: document.getElementById('productSelect').value,
+                rating: document.querySelector('input[name="rating"]:checked') ? 
+                    document.querySelector('input[name="rating"]:checked').value : '',
+                installDate: document.getElementById('installDate').value,
+                features: Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                    .map(function(cb) { return cb.value; }),
+                review: document.getElementById('reviewText').value,
+                userName: document.getElementById('userName').value || 'Anonymous',
+                timestamp: new Date().toISOString()
+            };
+
+            // ✅ Save to localStorage
+            var reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
+            reviews.push(formData);
+            localStorage.setItem('productReviews', JSON.stringify(reviews));
+
+            // ✅ Store the review count for display on review.html
+            localStorage.setItem('reviewCount', reviews.length);
+            localStorage.setItem('lastReviewId', reviews.length - 1);
+
+            // Redirect to review.html
+            window.location.href = 'review.html';
+
+            console.log('✅ Review saved to localStorage!');
+            console.log('📝 Total reviews:', reviews.length);
+        });
+    }
+
+    // ----- 6. Log startup messages -----
     console.log('✅ Product review form ready.');
     console.log('📦 ' + products.length + ' products loaded');
     
     var radios = document.querySelectorAll('input[name="rating"]');
     console.log('⭐ ' + radios.length + ' rating options available');
     
-    var checkboxes = document.querySelectorAll('input[name="features"]');
     console.log('✅ ' + checkboxes.length + ' feature checkboxes available');
 
-    // ----- 6. Verify all required elements exist -----
-    var requiredElements = {
-        'Product Select': document.getElementById('productSelect'),
-        'Rating Group': document.getElementById('ratingGroup'),
-        'Date Input': document.getElementById('installDate'),
-        'Review Text': document.getElementById('reviewText'),
-        'User Name': document.getElementById('userName')
-    };
-    
-    console.log('📋 Form elements status:');
-    for (var key in requiredElements) {
-        if (requiredElements.hasOwnProperty(key)) {
-            var element = requiredElements[key];
-            console.log('  ' + key + ': ' + (element ? '✅ Found' : '❌ Missing'));
-        }
-    }
 })();

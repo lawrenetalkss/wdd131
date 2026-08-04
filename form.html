@@ -3,20 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Meta Description -->
     <meta name="description" content="Share your product experience by submitting a review. Rate features, installation date, and provide feedback on our products." />
-    
-    <!-- Meta Author -->
     <meta name="author" content="Lawrence Adekunle" />
-    
     <title>Product Review Form</title>
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/form.css" />
+    <!-- ✅ Script loaded with defer for better performance -->
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
             <h1>Product Review</h1>
@@ -26,38 +20,38 @@
 
     <main>
         <div class="review-card">
-            <form id="reviewForm" action="review.html" method="get" novalidate>
+            <form id="reviewForm" novalidate>
 
                 <!-- 1. Product Name (select, required) -->
                 <div class="form-group">
-                    <label for="productSelect">Product Name <span class="label-hint">*</span></label>
-                    <select id="productSelect" name="product" required>
+                    <label for="productSelect">Product Name <span class="label-hint" aria-hidden="true">*</span></label>
+                    <select id="productSelect" name="product" required aria-required="true">
                         <option value="" disabled selected>Select a Product …</option>
                     </select>
                 </div>
 
                 <!-- 2. Overall Rating (radio, required) -->
                 <div class="form-group">
-                    <label>Overall Rating <span class="label-hint">*</span></label>
-                    <div class="rating-group" id="ratingGroup">
+                    <label>Overall Rating <span class="label-hint" aria-hidden="true">*</span></label>
+                    <div class="rating-group" id="ratingGroup" role="radiogroup">
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating1" value="1" required>
+                            <input type="radio" name="rating" id="rating1" value="1" required aria-required="true">
                             <label for="rating1" class="star-label">★☆☆☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating2" value="2" required>
+                            <input type="radio" name="rating" id="rating2" value="2">
                             <label for="rating2" class="star-label">★★☆☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating3" value="3" required>
+                            <input type="radio" name="rating" id="rating3" value="3">
                             <label for="rating3" class="star-label">★★★☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating4" value="4" required>
+                            <input type="radio" name="rating" id="rating4" value="4">
                             <label for="rating4" class="star-label">★★★★☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating5" value="5" required>
+                            <input type="radio" name="rating" id="rating5" value="5">
                             <label for="rating5" class="star-label">★★★★★</label>
                         </span>
                     </div>
@@ -65,8 +59,8 @@
 
                 <!-- 3. Date of Installation -->
                 <div class="form-group">
-                    <label for="installDate">Date of Installation <span class="label-hint">*</span></label>
-                    <input type="date" id="installDate" name="installDate" required />
+                    <label for="installDate">Date of Installation <span class="label-hint" aria-hidden="true">*</span></label>
+                    <input type="date" id="installDate" name="installDate" required aria-required="true" />
                 </div>
 
                 <!-- 4. Useful Features (checkboxes) -->
@@ -74,7 +68,7 @@
                     <label>Which features did you find useful? <span class="label-hint">(check all that apply)</span></label>
                     <div class="checkbox-grid">
                         <span class="checkbox-item">
-                            <input type="checkbox" id="featDurability" name="features" value="durability">
+                            <input type="checkbox" id="featDurability" name="features" value="durability" required aria-required="true">
                             <label for="featDurability">Durability</label>
                         </span>
                         <span class="checkbox-item">
@@ -114,7 +108,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <span>&copy; 2024 Surulere, Lagos, Nigeria</span>
@@ -122,8 +115,5 @@
             <span id="lastModified">Last Modified: </span>
         </div>
     </footer>
-
-    <!-- ✅ JavaScript - Correct path -->
-    <script src="scripts/script.js" defer></script>
 </body>
 </html>

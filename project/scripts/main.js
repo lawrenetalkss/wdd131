@@ -1,8 +1,8 @@
-// ============================================
-// SITE PLAN - JAVASCRIPT
-// ============================================
+/* ============================================================
+   main.js – Lagos Island Heritage
+   ============================================================ */
 
-// ========== FOOTER: Current Year ==========
+// ========== FOOTER FUNCTIONS ==========
 function setCurrentYear() {
     const yearElement = document.getElementById('year');
     if (yearElement) {
@@ -10,7 +10,6 @@ function setCurrentYear() {
     }
 }
 
-// ========== FOOTER: Last Modified Date ==========
 function setLastModified() {
     const lastModifiedElement = document.getElementById('lastModified');
     if (lastModifiedElement) {
@@ -18,95 +17,82 @@ function setLastModified() {
     }
 }
 
-// ========== SMOOTH SCROLL FOR NAVIGATION ==========
-function setupSmoothScroll() {
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+// ========== LOCAL STORAGE FUNCTIONS ==========
+function saveToLocalStorage(key, data) {
+    try {
+        localStorage.setItem(key, JSON.stringify(data));
+        return true;
+    } catch (error) {
+        console.error('Error saving to localStorage:', error);
+        return false;
+    }
 }
 
-// ========== ACTIVE NAVIGATION HIGHLIGHT ==========
-function setupActiveNav() {
-    const sections = document.querySelectorAll('.plan-section');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+function getFromLocalStorage(key) {
+    try {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : null;
+    } catch (error) {
+        console.error('Error retrieving from localStorage:', error);
+        return null;
+    }
 }
 
-// ========== COLOR SWATCH INTERACTION ==========
-function setupColorSwatches() {
-    document.querySelectorAll('.color-swatch').forEach(swatch => {
-        swatch.addEventListener('click', function() {
-            const hex = this.querySelector('.color-hex')?.textContent;
-            if (hex) {
-                navigator.clipboard?.writeText(hex).then(() => {
-                    const originalHTML = this.innerHTML;
-                    this.innerHTML = `
-                        <span style="font-size:1.2rem;">✅</span>
-                        <span style="display:block;font-size:0.9rem;margin-top:4px;">Copied!</span>
-                    `;
-                    setTimeout(() => {
-                        this.innerHTML = originalHTML;
-                    }, 1500);
-                }).catch(() => {
-                    alert(`Color: ${hex}`);
-                });
-            }
-        });
-    });
+// ========== FAVORITES COUNT ==========
+function updateFavoritesCount() {
+    const countElement = document.getElementById('favorites-count');
+    if (!countElement) return;
+    
+    const favorites = getFromLocalStorage('favorites') || [];
+    countElement.textContent = favorites.length;
 }
 
-// ========== WIREFRAME INTERACTION ==========
-function setupWireframes() {
-    document.querySelectorAll('.wireframe').forEach(wireframe => {
-        wireframe.addEventListener('mouseenter', function() {
-            this.style.borderColor = 'var(--gold-accent)';
-            this.style.boxShadow = '0 8px 24px var(--shadow-hover)';
-            this.style.transition = 'all 0.3s ease';
+// ========== NOTIFICATION SYSTEM ==========
+function showNotification(message, type) {
+    const notification = document.getElementById('notification');
+    if (!notification) {
+        // Create notification if it doesn't exist
+        const newNotification = document.createElement('div');
+        newNotification.id = 'notification';
+        newNotification.className = `notification ${type || 'info'}`;
+        newNotification.textContent = message;
+        document.body.appendChild(newNotification);
+        
+        setTimeout(() => {
+            newNotification.remove();
+        }, 5000);
+    } else {
+        notification.className = `notification ${type || 'info'}`;
+        notification.textContent = message;
+        notification.style.display = 'block';
+        
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// ========== HAMBURGER MENU ==========
+function setupHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+            this.classList.toggle('active');
         });
-        wireframe.addEventListener('mouseleave', function() {
-            this.style.borderColor = '#ddd';
-            this.style.boxShadow = 'none';
-        });
-    });
+    }
 }
 
 // ========== INITIALIZATION ==========
 function init() {
     setCurrentYear();
     setLastModified();
-    setupSmoothScroll();
-    setupActiveNav();
-    setupColorSwatches();
-    setupWireframes();
-
-    console.log('Lagos Island Heritage - Site Plan loaded successfully!');
-    console.log('📋 Website Planning Document');
-    console.log('📅', new Date().toLocaleDateString());
+    updateFavoritesCount();
+    setupHamburgerMenu();
+    
+    console.log('✅ Lagos Island Heritage initialized successfully!');
 }
 
 // ========== DOM CONTENT LOADED ==========
