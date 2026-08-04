@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Review confirmation page - thank you for your feedback!" />
+    <!-- ✅ FIXED: No self-closing slashes on any void elements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review confirmation page - thank you for your feedback!">
     <title>Review Submitted</title>
-    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/form.css">
     <style>
         .confirmation-card {
             max-width: 820px;
@@ -116,6 +117,10 @@
             margin: 1rem 0;
             text-align: left;
         }
+        /* ✅ FIXED: Removed self-closing from input styles */
+        input, select, textarea {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -132,12 +137,10 @@
             <h2>Review Received!</h2>
             <p>We appreciate your feedback and will use it to improve our products.</p>
             
-            <!-- Display URL parameters (from GET method) -->
             <div class="url-params" id="urlParams">
                 <strong>Form Data Received:</strong> <span id="paramDisplay">Loading...</span>
             </div>
             
-            <!-- Display total review count from localStorage -->
             <div class="review-count">
                 <strong>Total Reviews Submitted:</strong> <span id="totalReviews">0</span>
             </div>
@@ -172,7 +175,6 @@
         (function() {
             'use strict';
 
-            // ----- Display URL Parameters (from GET method) -----
             var urlParams = new URLSearchParams(window.location.search);
             var paramDisplay = document.getElementById('paramDisplay');
             
@@ -183,18 +185,15 @@
                 }
                 paramDisplay.textContent = paramsList.join(' | ');
             } else {
-                paramDisplay.textContent = 'No form data received via URL (submitted via JavaScript)';
+                paramDisplay.textContent = 'No form data received via URL';
             }
 
-            // ----- Get reviews from localStorage -----
             var reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
             var reviewCount = parseInt(localStorage.getItem('reviewCount') || '0');
             var lastId = parseInt(localStorage.getItem('lastReviewId') || '-1');
 
-            // Update total reviews count
             document.getElementById('totalReviews').textContent = reviewCount;
 
-            // Show the latest review details
             var reviewDetails = document.getElementById('reviewDetails');
             
             if (lastId >= 0 && reviews[lastId]) {
@@ -215,7 +214,6 @@
                 reviewDetails.innerHTML = '<p>No review data found. Please submit a review first.</p>';
             }
 
-            // Show all reviews (last 5)
             var allReviewsList = document.getElementById('allReviewsList');
             if (reviews.length === 0) {
                 allReviewsList.innerHTML = `
@@ -227,7 +225,6 @@
                     </div>
                 `;
             } else {
-                // Show last 5 reviews (most recent first)
                 var recentReviews = reviews.slice(-5).reverse();
                 allReviewsList.innerHTML = recentReviews.map(function(r, index) {
                     var stars = '★'.repeat(parseInt(r.rating) || 0) + '☆'.repeat(5 - (parseInt(r.rating) || 0));
@@ -243,7 +240,6 @@
                 }).join('');
             }
 
-            // Update last modified
             var lastModified = document.getElementById('lastModified');
             if (lastModified) {
                 var now = new Date();
@@ -261,8 +257,6 @@
 
             console.log('✅ Review page loaded');
             console.log('📝 Total reviews in localStorage:', reviews.length);
-            console.log('📊 Review count from localStorage:', reviewCount);
-            console.log('🔗 URL Parameters:', window.location.search);
 
         })();
     </script>
