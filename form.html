@@ -7,7 +7,6 @@
     <meta name="author" content="Lawrence Adekunle" />
     <title>Product Review Form</title>
     <link rel="stylesheet" href="styles/form.css" />
-    <!-- ✅ Script loaded with defer for better performance -->
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
@@ -20,7 +19,7 @@
 
     <main>
         <div class="review-card">
-            <form id="reviewForm" novalidate>
+            <form id="reviewForm" method="get" action="review.html" novalidate>
 
                 <!-- 1. Product Name (select, required) -->
                 <div class="form-group">
@@ -35,23 +34,28 @@
                     <label>Overall Rating <span class="label-hint" aria-hidden="true">*</span></label>
                     <div class="rating-group" id="ratingGroup" role="radiogroup">
                         <span class="rating-option">
+                            <!-- ✅ FIXED: Added required to ALL radio inputs -->
                             <input type="radio" name="rating" id="rating1" value="1" required aria-required="true">
                             <label for="rating1" class="star-label">★☆☆☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating2" value="2">
+                            <!-- ✅ FIXED: Added required to ALL radio inputs -->
+                            <input type="radio" name="rating" id="rating2" value="2" required aria-required="true">
                             <label for="rating2" class="star-label">★★☆☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating3" value="3">
+                            <!-- ✅ FIXED: Added required to ALL radio inputs -->
+                            <input type="radio" name="rating" id="rating3" value="3" required aria-required="true">
                             <label for="rating3" class="star-label">★★★☆☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating4" value="4">
+                            <!-- ✅ FIXED: Added required to ALL radio inputs -->
+                            <input type="radio" name="rating" id="rating4" value="4" required aria-required="true">
                             <label for="rating4" class="star-label">★★★★☆</label>
                         </span>
                         <span class="rating-option">
-                            <input type="radio" name="rating" id="rating5" value="5">
+                            <!-- ✅ FIXED: Added required to ALL radio inputs -->
+                            <input type="radio" name="rating" id="rating5" value="5" required aria-required="true">
                             <label for="rating5" class="star-label">★★★★★</label>
                         </span>
                     </div>

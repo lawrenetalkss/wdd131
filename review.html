@@ -106,6 +106,16 @@
         .button-secondary:hover {
             background: #d6d2ca;
         }
+        .url-params {
+            background: #eae6e0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            margin: 1rem 0;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -122,7 +132,12 @@
             <h2>Review Received!</h2>
             <p>We appreciate your feedback and will use it to improve our products.</p>
             
-            <!-- ✅ Display total review count from localStorage -->
+            <!-- Display URL parameters (from GET method) -->
+            <div class="url-params" id="urlParams">
+                <strong>Form Data Received:</strong> <span id="paramDisplay">Loading...</span>
+            </div>
+            
+            <!-- Display total review count from localStorage -->
             <div class="review-count">
                 <strong>Total Reviews Submitted:</strong> <span id="totalReviews">0</span>
             </div>
@@ -157,12 +172,26 @@
         (function() {
             'use strict';
 
-            // ✅ Get reviews from localStorage
+            // ----- Display URL Parameters (from GET method) -----
+            var urlParams = new URLSearchParams(window.location.search);
+            var paramDisplay = document.getElementById('paramDisplay');
+            
+            if (urlParams.toString()) {
+                var paramsList = [];
+                for (var pair of urlParams.entries()) {
+                    paramsList.push(pair[0] + ': ' + pair[1]);
+                }
+                paramDisplay.textContent = paramsList.join(' | ');
+            } else {
+                paramDisplay.textContent = 'No form data received via URL (submitted via JavaScript)';
+            }
+
+            // ----- Get reviews from localStorage -----
             var reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
             var reviewCount = parseInt(localStorage.getItem('reviewCount') || '0');
             var lastId = parseInt(localStorage.getItem('lastReviewId') || '-1');
 
-            // ✅ Update total reviews count
+            // Update total reviews count
             document.getElementById('totalReviews').textContent = reviewCount;
 
             // Show the latest review details
@@ -233,6 +262,7 @@
             console.log('✅ Review page loaded');
             console.log('📝 Total reviews in localStorage:', reviews.length);
             console.log('📊 Review count from localStorage:', reviewCount);
+            console.log('🔗 URL Parameters:', window.location.search);
 
         })();
     </script>

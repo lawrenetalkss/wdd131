@@ -80,10 +80,9 @@
     var form = document.getElementById('reviewForm');
     if (form) {
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
             // Use HTML5 validation
             if (!form.checkValidity()) {
+                e.preventDefault();
                 form.reportValidity();
                 return;
             }
@@ -101,18 +100,16 @@
                 timestamp: new Date().toISOString()
             };
 
-            // ✅ Save to localStorage
+            // Save to localStorage
             var reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
             reviews.push(formData);
             localStorage.setItem('productReviews', JSON.stringify(reviews));
 
-            // ✅ Store the review count for display on review.html
+            // Store the review count for display on review.html
             localStorage.setItem('reviewCount', reviews.length);
             localStorage.setItem('lastReviewId', reviews.length - 1);
 
-            // Redirect to review.html
-            window.location.href = 'review.html';
-
+            // Allow the form to submit naturally with method="get"
             console.log('✅ Review saved to localStorage!');
             console.log('📝 Total reviews:', reviews.length);
         });
